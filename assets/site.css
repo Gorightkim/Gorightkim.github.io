@@ -1,0 +1,192 @@
+/* 한결그린 사이트 공통 스타일. 외부 주소·쿠키·추적 없음. 색은 앱 1(뭘 버리세요)의 토큰과 같다. */
+
+/* Pretendard Variable (SIL OFL 1.1, assets/fonts/LICENSE-Pretendard.txt).
+   2MB라서 font-display: optional — 느린 첫 방문은 기기 글꼴로 바로 보이고, 받아 둔 뒤부터 Pretendard로 보인다.
+   더 가볍게 하려면 이 @font-face 블록과 assets/fonts/ 폴더를 지우면 된다(기기 글꼴로 그대로 동작). */
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: optional;
+  src: url('fonts/PretendardVariable.woff2') format('woff2-variations'),
+       url('fonts/PretendardVariable.woff2') format('woff2');
+}
+
+:root {
+  --bg: #f2f4f3;
+  --surface: #ffffff;
+  --text: #161b19;
+  --muted: #4a5550;
+  --line: #e3e7e5;
+  --accent: #0e7a3e;
+  --accent-text: #0b6b3b;
+  --accent-soft: #e4f4ea;
+  --on-accent-soft: #0a5a2e;
+  --neutral-soft: #e8ecea;
+  --on-neutral-soft: #3d4843;
+  --warn-soft: #fbf0db;
+  --on-warn-soft: #6e4a00;
+  --shadow: 0 1px 2px rgba(22, 27, 25, 0.06);
+  --radius: 16px;
+  --font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Segoe UI', sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1211;
+    --surface: #191d1b;
+    --text: #eef2f0;
+    --muted: #a9b4af;
+    --line: #2c3330;
+    --accent: #4fcb82;
+    --accent-text: #5fd08d;
+    --accent-soft: #143222;
+    --on-accent-soft: #8fe3b0;
+    --neutral-soft: #242a27;
+    --on-neutral-soft: #c3ccc8;
+    --warn-soft: #2e2512;
+    --on-warn-soft: #f0c872;
+    --shadow: none;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--accent-text); text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+/* ── 머리·꼬리 ── */
+.site-head { padding-top: 16px; padding-bottom: 8px; }
+.brand {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--text); text-decoration: none; font-weight: 700; font-size: 1.05rem;
+  min-height: 44px;
+}
+.brand svg { width: 28px; height: 28px; flex: none; }
+.crumbs { margin: 0; font-size: 0.9rem; color: var(--muted); }
+.crumbs a { color: var(--muted); }
+.site-foot {
+  margin-top: 56px; padding-top: 24px; padding-bottom: 40px; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 0.875rem;
+}
+.site-foot p { margin: 0 0 4px; }
+.site-foot a { color: var(--muted); }
+
+/* ── 첫 화면 ── */
+.hero { padding: 24px 0 8px; }
+.hero h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 8px; letter-spacing: -0.01em; }
+.lead { font-size: 1.1rem; color: var(--muted); margin: 0; }
+
+h2.section { font-size: 1.1rem; margin: 40px 0 12px; }
+
+/* ── 앱 카드 ── */
+.apps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.app-card {
+  display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px; box-shadow: var(--shadow);
+}
+.app-icon { width: 56px; height: 56px; border-radius: 14px; overflow: hidden; }
+.app-icon svg, .app-icon img { width: 100%; height: 100%; }
+.app-card h3 { margin: 0; font-size: 1.1rem; line-height: 1.4; }
+.app-card h3 a { color: var(--text); text-decoration: none; }
+.app-card h3 a:hover { text-decoration: underline; }
+.app-card p { margin: 4px 0 8px; color: var(--muted); }
+.app-title { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; padding: 0; list-style: none; font-size: 0.95rem; }
+.links a { display: inline-block; padding: 4px 0; }
+
+.badge {
+  display: inline-block; font-size: 0.8rem; font-weight: 600; line-height: 1.5;
+  padding: 2px 10px; border-radius: 999px; white-space: nowrap;
+}
+.badge-ready { background: var(--accent-soft); color: var(--on-accent-soft); }
+.badge-dev { background: var(--neutral-soft); color: var(--on-neutral-soft); }
+.badge-draft { background: var(--warn-soft); color: var(--on-warn-soft); }
+
+/* ── 앱 소개 페이지 ── */
+.app-head { display: flex; align-items: center; gap: 16px; padding: 24px 0 4px; }
+.app-head .app-icon { width: 72px; height: 72px; border-radius: 18px; flex: none; }
+.app-head h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 4px; }
+.points { margin: 20px 0 0; padding-left: 1.2em; }
+.points li { margin: 6px 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 20px 0 0; }
+.facts li {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+  padding: 4px 12px; font-size: 0.9rem; color: var(--muted);
+}
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 10px 18px; border-radius: 12px;
+  font: inherit; font-weight: 600; text-decoration: none;
+  background: var(--surface); color: var(--text); border: 1px solid var(--line);
+}
+.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+@media (prefers-color-scheme: dark) { .btn-primary { color: #04210f; } }
+/* 아직 누를 수 없는 자리(출시 전 스토어 버튼). 링크가 아니라 span이라 눌리지 않는다 */
+.btn-off { background: transparent; color: var(--muted); border-style: dashed; cursor: default; }
+
+.shots {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: 12px;
+  margin: 28px -16px 0; padding: 0 16px 8px;
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  list-style: none;
+}
+.shots li { scroll-snap-align: start; }
+.shots img {
+  width: 100%; height: auto; aspect-ratio: 9 / 16;
+  border-radius: 14px; border: 1px solid var(--line); background: var(--surface);
+}
+@media (min-width: 600px) {
+  .shots { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); margin: 28px 0 0; padding: 0; overflow: visible; }
+}
+
+.small { font-size: 0.9rem; color: var(--muted); }
+
+/* ── 문서(개인정보처리방침) ── */
+.doc { padding-top: 16px; }
+.doc h1 { font-size: 1.6rem; line-height: 1.3; margin: 8px 0 12px; }
+.doc h2 { font-size: 1.15rem; margin: 36px 0 10px; padding-top: 20px; border-top: 1px solid var(--line); }
+.doc p, .doc ul { margin: 0 0 12px; }
+.doc ul { padding-left: 1.2em; }
+.doc li { margin: 4px 0; }
+.doc .date { color: var(--muted); }
+.table-wrap { overflow-x: auto; margin: 0 0 12px; }
+.doc table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 12px; overflow: hidden; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.doc th { font-weight: 600; color: var(--muted); }
+.doc th[scope='row'] { width: 34%; }
+.doc td:first-child:not(:last-child) { width: 62%; }
+.doc tr:last-child th, .doc tr:last-child td { border-bottom: 0; }
+
+.note {
+  background: var(--warn-soft); color: var(--on-warn-soft);
+  border-radius: 12px; padding: 12px 14px; margin: 0 0 16px;
+}
+.note strong { font-weight: 700; }
+
+/* ── 404 ── */
+.center { text-align: center; padding-top: 64px; padding-bottom: 16px; }
+.center h1 { font-size: 1.5rem; margin: 0 0 8px; }
+.center .actions { justify-content: center; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

@@ -1,0 +1,9 @@
+# 한결그린 app-ads.txt (광고 판매 권한 확인용. 사이트 맨 위 주소/app-ads.txt 에 있어야 한다)
+#
+# 아직 비어 있다. AdMob 계정을 만든 뒤 아래 순서로 채운다(DEPLOY.md 6단계).
+#  1) AdMob > 앱 > app-ads.txt 안내에 나오는 한 줄을 복사한다. 모양은 아래 예시와 같다.
+#  2) 예시 줄 맨 앞의 '# '를 지우고, pub-XXXXXXXXXXXXXXXX 를 내 게시자 ID(pub-숫자16자리)로 바꾼다.
+#     (또는 예시 줄을 지우고 AdMob에서 복사한 줄을 그대로 붙여 넣는다)
+#  3) 저장하고 다시 올린다. AdMob이 확인하는 데 하루쯤 걸린다.
+#
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

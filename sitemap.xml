@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- gorightkim.github.io을 실제 주소로 바꾼다(예: hangyeolgreen.github.io). 사이트맵 주소는 전체 주소여야 한다. DEPLOY.md 4단계. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://gorightkim.github.io/</loc></url>
+  <url><loc>https://gorightkim.github.io/apps/waste/</loc></url>
+  <url><loc>https://gorightkim.github.io/apps/waste/privacy.html</loc></url>
+  <url><loc>https://gorightkim.github.io/apps/ev/</loc></url>
+  <url><loc>https://gorightkim.github.io/apps/ev/privacy.html</loc></url>
+  <url><loc>https://gorightkim.github.io/apps/pet/</loc></url>
+</urlset>
